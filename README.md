@@ -7,6 +7,17 @@
 **tCurrencyConverter** is a basic Python Flask web app that lets users convert currencies using real-time exchange rates. It features a simple frontend, styled with CSS, and uses an exchange rate API for accurate conversion.
 
 
+---
+
+## 🚀 Features
+
+- Convert between major currencies using real-time rates
+- Simple and clean HTML + CSS interface
+- Logo branding for a better UI touch
+
+---
+
+
 
 ## 📁 Project Structure
 
@@ -21,12 +32,3 @@ tCurrencyConverter/
 └── README.md            # Project documentation (this file)
 ```
 
----
-
-## 🚀 Features
-
-- Convert between major currencies using real-time rates
-- Simple and clean HTML + CSS interface
-- Logo branding for a better UI touch
-
----
