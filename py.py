@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 API_KEY = "458c2bf9af278a9f7ed4372e"
-API_URL = "https://v6.exchangerate-api.com/v6/{}/latest/{}"
+API_URL = "https://v6.exchangerate-api.com/v6/{458c2bf9af278a9f7ed4372e}/latest/{USD}"
 
 currency_names = {
     "USD": "US Dollars", "INR": "Indian Rupees", "CAD": "Canadian Dollars", "EUR": "Euros", 
