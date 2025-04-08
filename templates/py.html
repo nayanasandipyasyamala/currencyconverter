@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='py.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Currency Converter</h2>
+        <form method="post">
+            <div class="input-group">
+                <label for="from_currency">From:</label>
+                <select name="from_currency" id="from_currency">
+                    <option value="select">Select Currency</option>
+                    <option value="USD" {% if from_currency=="USD" %}selected{% endif %}>US Dollar (USD)</option>
+                    <option value="INR" {% if from_currency=="INR" %}selected{% endif %}>Indian Rupees (INR)</option>
+                    <option value="CAD" {% if from_currency=="CAD" %}selected{% endif %}>Canadian Dollar (CAD)</option>
+                    <option value="EUR" {% if from_currency=="EUR" %}selected{% endif %}>Euro (EUR)</option>
+                    <option value="GBP" {% if from_currency=="GBP" %}selected{% endif %}>British Pound (GBP)</option>
+                    <option value="AUD" {% if from_currency=="AUD" %}selected{% endif %}>Australian Dollar (AUD)</option>
+                    <option value="JPY" {% if from_currency=="JPY" %}selected{% endif %}>Japanese Yen (JPY)</option>
+                    <option value="CNY" {% if from_currency=="CNY" %}selected{% endif %}>Chinese Yuan (CNY)</option>
+                    <option value="SGD" {% if from_currency=="SGD" %}selected{% endif %}>Singapore Dollar (SGD)</option>
+                    <option value="CHF" {% if from_currency=="CHF" %}selected{% endif %}>Swiss Franc (CHF)</option>
+                    <option value="BRL" {% if from_currency=="BRL" %}selected{% endif %}>Brazilian Real (BRL)</option>
+                    <option value="MXN" {% if from_currency=="MXN" %}selected{% endif %}>Mexican Peso (MXN)</option>
+                    <option value="ZAR" {% if from_currency=="ZAR" %}selected{% endif %}>South African Rand (ZAR)</option>
+                    <option value="KRW" {% if from_currency=="KRW" %}selected{% endif %}>South Korean Won (KRW)</option>
+                    <option value="RUB" {% if from_currency=="RUB" %}selected{% endif %}>Russian Ruble (RUB)</option>
+                    <option value="HKD" {% if from_currency=="HKD" %}selected{% endif %}>Hong Kong Dollar (HKD)</option>
+                    <option value="NZD" {% if from_currency=="NZD" %}selected{% endif %}>New Zealand Dollar (NZD)</option>
+                    <option value="SEK" {% if from_currency=="SEK" %}selected{% endif %}>Swedish Krona (SEK)</option>
+                    <option value="NOK" {% if from_currency=="NOK" %}selected{% endif %}>Norwegian Krone (NOK)</option>
+                    <option value="AED" {% if from_currency=="AED" %}selected{% endif %}>UAE Dirham (AED)</option>
+                    <option value="THB" {% if from_currency=="THB" %}selected{% endif %}>Thai Baht (THB)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="to_currency">To:</label>
+                <select name="to_currency" id="to_currency">
+                    <option value="select">Select Currency</option>
+                    <option value="USD" {% if to_currency=="USD" %}selected{% endif %}>US Dollar (USD)</option>
+                    <option value="INR" {% if to_currency=="INR" %}selected{% endif %}>Indian Rupees (INR)</option>
+                    <option value="CAD" {% if to_currency=="CAD" %}selected{% endif %}>Canadian Dollar (CAD)</option>
+                    <option value="EUR" {% if to_currency=="EUR" %}selected{% endif %}>Euro (EUR)</option>
+                    <option value="GBP" {% if to_currency=="GBP" %}selected{% endif %}>British Pound (GBP)</option>
+                    <option value="AUD" {% if to_currency=="AUD" %}selected{% endif %}>Australian Dollar (AUD)</option>
+                    <option value="JPY" {% if to_currency=="JPY" %}selected{% endif %}>Japanese Yen (JPY)</option>
+                    <option value="CNY" {% if to_currency=="CNY" %}selected{% endif %}>Chinese Yuan (CNY)</option>
+                    <option value="SGD" {% if to_currency=="SGD" %}selected{% endif %}>Singapore Dollar (SGD)</option>
+                    <option value="CHF" {% if to_currency=="CHF" %}selected{% endif %}>Swiss Franc (CHF)</option>
+                    <option value="BRL" {% if to_currency=="BRL" %}selected{% endif %}>Brazilian Real (BRL)</option>
+                    <option value="MXN" {% if to_currency=="MXN" %}selected{% endif %}>Mexican Peso (MXN)</option>
+                    <option value="ZAR" {% if to_currency=="ZAR" %}selected{% endif %}>South African Rand (ZAR)</option>
+                    <option value="KRW" {% if to_currency=="KRW" %}selected{% endif %}>South Korean Won (KRW)</option>
+                    <option value="RUB" {% if to_currency=="RUB" %}selected{% endif %}>Russian Ruble (RUB)</option>
+                    <option value="HKD" {% if to_currency=="HKD" %}selected{% endif %}>Hong Kong Dollar (HKD)</option>
+                    <option value="NZD" {% if to_currency=="NZD" %}selected{% endif %}>New Zealand Dollar (NZD)</option>
+                    <option value="SEK" {% if to_currency=="SEK" %}selected{% endif %}>Swedish Krona (SEK)</option>
+                    <option value="NOK" {% if to_currency=="NOK" %}selected{% endif %}>Norwegian Krone (NOK)</option>
+                    <option value="AED" {% if to_currency=="AED" %}selected{% endif %}>UAE Dirham (AED)</option>
+                    <option value="THB" {% if to_currency=="THB" %}selected{% endif %}>Thai Baht (THB)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount" id="amount" placeholder="Enter amount" value="{{ amount }}">
+            </div>
+
+            <button type="submit" class="convert-btn">Convert</button>
+        </form>
+
+        {% if converted_text %}
+            <p class="converted">{{ converted_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
